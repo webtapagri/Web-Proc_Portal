@@ -1,0 +1,31 @@
+{
+    "name": "artisaninweb/laravel-soap",
+    "description": "A SoapClient wrapper integration for Laravel",
+    "keywords": ["laravel", "soap", "client", "wrapper"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael van de Rijt",
+            "email": "me@mvdrijt.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "ext-soap": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Artisaninweb\\SoapWrapper": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Artisaninweb\\SoapWrapper\\ServiceProvider"
+            ],
+            "aliases": {
+                "SoapWrapper": "Artisaninweb\\SoapWrapper\\Facade"
+            }
+        }
+    }
+}
