@@ -154,7 +154,7 @@
                     <li><a href=""><i class="fa fa-question text-green"></i> <span>Help</span></a></li>
 					*/ ?>
 					<li class="{{ (url('/') == url()->current() ? 'active':'') }}">
-						<a style="border-top:1px solid #182225" href="{{ url('/') }}"><i class="fa fa-opencart"></i> <span>Item List</span></a>
+						<a style="border-top:1px solid #182225" href="{{ url('/') }}"><i class="fa fa-opencart"></i> <span>Home</span></a>
 					</li>
 					
 					<li class="treeview active">
@@ -163,20 +163,23 @@
 						<i class="fa fa-angle-left pull-right"></i>
 					  </a>
 					  <ul class="treeview-menu">
-                            <li class="<?php echo @$coutstanding; ?>"><a href="{{ url('/myorder/outstanding') }}"><i class="fa fa-angle-double-right"></i> Outstanding Order</a></li>
+                            <li class="<?php echo @$ccreate; ?>"><a href="{{ url('/cart') }}"><i class="fa fa-angle-double-right"></i> Create Order</a></li>
+                            <!--li class="<?php echo @$coutstanding; ?>"><a href="{{ url('/myorder/outstanding') }}"><i class="fa fa-angle-double-right"></i> Outstanding Order</a></li-->
                             <li class="<?php echo @$ctracking; ?>"><a href="{{ url('/myorder/tracking') }}"><i class="fa fa-angle-double-right"></i> Tracking Order</a></li>  
-                            <li class="<?php echo @$conprogress; ?>"><a href="{{ url('/myorder/on-progress') }}"><i class="fa fa-angle-double-right"></i> On Progress</a></li> 
-                            <li class="<?php echo @$cdelivered; ?>"><a href=""><i class="fa fa-angle-double-right"></i> Delivered</a></li>               
+                            <!--li class="<?php echo @$conprogress; ?>"><a href="{{ url('/myorder/on-progress') }}"><i class="fa fa-angle-double-right"></i> On Progress</a></li> 
+                            <li class="<?php echo @$cdelivered; ?>"><a href=""><i class="fa fa-angle-double-right"></i> Delivered</a></li-->               
 					  </ul>
 					</li>
 					
+                    <?php /*
 					<li class="treeview">
 					  <a href="#">
 						<i class="fa fa-cart-arrow-down"></i> <span>My History</span>
 						<i class="fa fa-angle-left pull-right"></i>
 					  </a>
-
 					</li>
+                    */ ?>
+
                 </ul>
                 <!-- /.sidebar-menu -->
             </section>

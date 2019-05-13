@@ -9,7 +9,7 @@ use Session;
 
 //use Yajra\Datatables\Datatables;
 
-class OutstandingController extends Controller
+class TrackingController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -30,9 +30,9 @@ class OutstandingController extends Controller
         
         if(Session::get('role_id')) 
         {           
-            $dt['title'] = 'Outstanding | Procurement Portal';
+            $dt['title'] = 'Tracking Order | Procurement Portal';
             $dt['totalcartnotif'] = $this->get_totalcartnotif();
-            return view('outstanding', $dt);
+            return view('tracking', $dt);
         } 
         else 
         {
@@ -50,37 +50,6 @@ class OutstandingController extends Controller
         return $dt[0]->total;
     }
 
-    public function ___grid_datatable()
-    {
-        $a = 5;
-        $ulevel = 1; //Auth::user()->level;
-        $upt = 1; //Auth::user()->pt_code;
-        
-
-        //echo '<pre>'; print_r(Datatables::of(Crud::query())->make(true));die();
-        $sql = " SELECT a.* FROM tr_order_req a ORDER BY a.created DESC ";
-       //$sql = " select a.*, TIMESTAMPDIFF(YEAR,date_of_birth, CURDATE()) AS age from tr_candidate a where status=1 $where ";
-        //echo $sql; die();
-        return Datatables::of(DB::select($sql))->make(true);
-        
-        
-        /*
-        if($ulevel != 1)
-        {
-            //$where .= " and a.subco = '".$upt."' ";
-            return Datatables::of(Crud::query())
-                    ->where('status',1)
-                    ->make(true);
-        }
-        else
-        {
-             return Datatables::of(Crud::query())
-                    ->where(array('status'=>1,'subco'=>''.$upt.''))
-                    ->make(true);
-        }
-        */
-    }
-
     function grid_datatable()
     {
         //echo "<pre>"; print_r($_POST); die();
@@ -94,7 +63,7 @@ class OutstandingController extends Controller
         $length = !empty($_POST["length"]) ? intval($_POST["length"]) : "";
 
 
-        $sql = " SELECT a.* FROM tr_order_req a WHERE a.username_req = '{$username}' AND a.status = 'processing' ORDER BY a.created DESC ";  
+        $sql = " SELECT a.* FROM tr_order_req a WHERE a.username_req = '{$username}' AND a.status = 'approve' ORDER BY a.created DESC ";  
         $datatable = DB::SELECT($sql);
         //echo "<pre>"; print_r($datatable); die();
 

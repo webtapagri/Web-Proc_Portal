@@ -89,8 +89,8 @@ class LDAPController extends Controller
             
 			//echo "<pre>"; print_r(session()->all()); die();
 			
-            //return redirect('/');
-			return redirect('/cart');
+            return redirect('/');
+			//return redirect('/cart');
 
         }
 		else

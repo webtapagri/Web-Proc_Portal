@@ -47,6 +47,10 @@ Route::post('/cart/delete', 'CartController@remove')->name('/cart/delete');
 Route::get('/myorder/outstanding', 'OutstandingController@index');
 Route::get('/outstanding/grid', 'OutstandingController@grid_datatable');
 
+/* TRACKING ORDER */ 
+Route::get('/myorder/tracking', 'TrackingController@index');
+Route::get('/tracking/grid', 'TrackingController@grid_datatable');
+
 /* MATERIAL SET */
 Route::resource('/setmaterial', 'SetMaterialController');
 Route::post('/setmaterial/post', 'SetMaterialController@store');
