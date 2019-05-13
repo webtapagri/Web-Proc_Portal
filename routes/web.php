@@ -22,8 +22,10 @@ Route::group(['middleware' => ['web']], function () {
 
 });
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'OutstandingController@index')->name('home');
+Route::get('/home', 'OutstandingController@index')->name('home');
 Route::get('/profile', 'ProfileController@index');
 Route::post('/ldaplogin', 'LDAPController@login');
 Route::post('/ldaplogout', 'LDAPController@logout');
@@ -40,6 +42,10 @@ Route::post('/plusmindata/{no_material}/{no_id}/{action}', 'CartController@plusm
 Route::post('/create_order', 'CartController@create_order')->name('create_order');
 Route::get('/cart/show/{id}', 'CartController@show')->name('/cart/show/{id}');
 Route::post('/cart/delete', 'CartController@remove')->name('/cart/delete');
+
+/* OUTSTANDING ORDER */
+Route::get('/myorder/outstanding', 'OutstandingController@index');
+Route::get('/outstanding/grid', 'OutstandingController@grid_datatable');
 
 /* MATERIAL SET */
 Route::resource('/setmaterial', 'SetMaterialController');
@@ -184,11 +190,13 @@ Route::get( '/mappingplant/edit/', 'MappingPlantController@show');
 Route::post( '/mappingplant/inactive', 'MappingPlantController@inactive');
 Route::get( 'grid-mappingplant', ['as' => 'get.mappingplant_grid', 'uses' => 'MappingPlantController@dataGrid']);
 
+/*
 Route::resource('/outstanding', 'OutstandingController');
 Route::post('/outstanding/post', 'OutstandingController@store');
 Route::get('/outstanding/edit/', 'OutstandingController@show');
 Route::post('/outstanding/inactive', 'OutstandingController@inactive');
 Route::get('grid-outstanding', ['as' => 'get.outstanding_grid', 'uses' => 'OutstandingController@dataGrid']);
+*/
 
 Route::resource('/verifikasi', 'VerifikasiController');
 Route::post('/verifikasi/post', 'VerifikasiController@store');

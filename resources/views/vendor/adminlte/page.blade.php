@@ -163,8 +163,10 @@
 						<i class="fa fa-angle-left pull-right"></i>
 					  </a>
 					  <ul class="treeview-menu">
-						  <li class="<?php echo @$conprogress; ?>"><a href="{{ url('/myorder/on-progress') }}"><i class="fa fa-angle-double-right"></i> On Progress</a></li> 
-						  <li class="<?php echo @$cdelivered; ?>"><a href=""><i class="fa fa-angle-double-right"></i> Delivered</a></li>               
+                            <li class="<?php echo @$coutstanding; ?>"><a href="{{ url('/myorder/outstanding') }}"><i class="fa fa-angle-double-right"></i> Outstanding Order</a></li>
+                            <li class="<?php echo @$ctracking; ?>"><a href="{{ url('/myorder/tracking') }}"><i class="fa fa-angle-double-right"></i> Tracking Order</a></li>  
+                            <li class="<?php echo @$conprogress; ?>"><a href="{{ url('/myorder/on-progress') }}"><i class="fa fa-angle-double-right"></i> On Progress</a></li> 
+                            <li class="<?php echo @$cdelivered; ?>"><a href=""><i class="fa fa-angle-double-right"></i> Delivered</a></li>               
 					  </ul>
 					</li>
 					

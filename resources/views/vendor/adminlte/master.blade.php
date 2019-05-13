@@ -76,6 +76,7 @@
     @if(config('adminlte.plugins.datatables'))
     <!-- DataTables with bootstrap 3 renderer -->
     <script src="//cdn.datatables.net/v/bs/dt-1.10.18/datatables.min.js"></script>
+    <script src="https://cdn.datatables.net/fixedheader/3.1.5/js/dataTables.fixedHeader.min.js"></script>
     @endif
 
     <script src="{{ asset('vendor/adminlte/plugins/datatables/app.js') }}"></script>

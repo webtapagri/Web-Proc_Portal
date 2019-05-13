@@ -152,7 +152,7 @@
 <div class="box-footer clearfix">
 	<a href="{{ url('/cart') }}" class="btn btn-sm btn-info btn-flat pull-left"><i class="fa fa-backward"></i> Back to Cart</a>
 	<?php if(!empty($data)){ ?>
-	<a href="#" data-toggle="modal" data-target="#modalbuatpesanan"><button class="btn btn-danger pull-right"><i class="fa fa-opencart"></i> BUAT PESANAN</button></a>
+	<a href="#" data-toggle="modal" data-target="#modalbuatpesanan"><button class="btn btn-danger pull-right"><i class="fa fa-opencart"></i> PROCESS</button></a>
 	<?php } ?>
 </div>
 <!-- /.box-footer -->
@@ -165,7 +165,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-				<h3 class="modal-title" id="myModalLabel">Konfirmasi Buat Pesanan ?</h3>
+				<h3 class="modal-title" id="myModalLabel">Konfirmasi Order ?</h3>
 			</div>
 			
 			<form id="form-cart-detil" name="form-cart-detil" class="form-horizontal" method="POST" action="{{ url('/create_order') }}">

@@ -124,7 +124,7 @@
 	<!-- /.box-body -->
 	<div class="box-footer clearfix">
 		<?php /* <a href="/" class="btn btn-sm btn-info btn-flat pull-left"><i class="fa fa-backward"></i> Back</a> */ ?>
-		<button type="submit" class="btn btn-danger pull-right"><i class="fa fa-opencart"></i> CHECK OUT</button>
+		<button type="submit" class="btn btn-danger pull-right"><i class="fa fa-opencart"></i> PROCESS</button>
 	</div>
 	<!-- /.box-footer -->
 </div>
